@@ -68,7 +68,6 @@ namespace VBBinaryLensingLibrary {
 		bool ESPLoff, multidark;
 		annulus *annlist;
 
-		void ComputeParallax(double, double, double *);
 		double LDprofile(double r);
 		double rCLDprofile(double tc,annulus *,annulus *);
 		double BinaryMagSafe(double s, double q, double y1, double y2, double rho, _sols **images);
@@ -80,7 +79,7 @@ namespace VBBinaryLensingLibrary {
 		void solve_quadratic_eq(complex &, complex &, complex *);
 		void solve_cubic_eq(complex &, complex &, complex &, complex *);
 
-	public: 
+	public:
 
 		double Tol, RelTol, a1,a2, t0_par; 
 		bool astrometry;
@@ -93,8 +92,9 @@ namespace VBBinaryLensingLibrary {
 		_sols *PlotCrit(double a,double q);
 		void PrintCau(double a,double q,double y1, double y2, double rho);
 
-	// Initialization for calculations including parallax
+	// Parallax
 		void SetObjectCoordinates(char *Coordinates_file, char *Directory_for_satellite_tables);
+        void ComputeParallax(double, double, double *);
 
 	// Magnification calculation functions.
 
