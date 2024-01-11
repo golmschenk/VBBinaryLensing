@@ -496,6 +496,10 @@ void VBBinaryLensing::ComputeParallax(double t, double t0, double *Et) {
 	}
 }
 
+void VBBinaryLensing::set_parallaxsystem(int value) {
+    parallaxsystem = value;
+}
+
 //////////////////////////////
 //////////////////////////////
 ////////Basic magnification functions

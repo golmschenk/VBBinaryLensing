@@ -59,7 +59,7 @@ namespace VBBinaryLensingLibrary {
 		double Mag0, corrquad, corrquad2, safedist;
 		int nim0;
 		double e,phi,phip,phi0,Om,inc,t0,d3,v3,GM,flagits;
-		double Obj[3],rad[3],tang[3],t0old;
+		double  Obj[3],rad[3],tang[3],t0old;
 		double Eq2000[3],Quad2000[3],North2000[3];
 		double ESPLout[__rsize][__zsize], ESPLin[__rsize][__zsize],ESPLoutastro[__rsize][__zsize], ESPLinastro[__rsize][__zsize];
 		double *LDtab,*rCLDtab,*CLDtab;
@@ -95,6 +95,7 @@ namespace VBBinaryLensingLibrary {
 	// Parallax
 		void SetObjectCoordinates(char *Coordinates_file, char *Directory_for_satellite_tables);
         void ComputeParallax(double, double, double *);
+        void set_parallaxsystem(int value);
 
 	// Magnification calculation functions.
 
@@ -167,7 +168,7 @@ namespace VBBinaryLensingLibrary {
 
 		private:
 			LDprofiles curLDprofile;
-	};
+    };
 
 	struct annulus{
 		double bin;

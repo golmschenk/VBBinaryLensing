@@ -14,3 +14,7 @@ void set_object_coordinates_for_vbbl(void *vbbl, char *coordinates_file, char *d
 void compute_parallax_for_vbbl(void *vbbl, double t, double t0, double *Et) {
     static_cast<VBBinaryLensing *>(vbbl)->ComputeParallax(t, t0, Et);
 };
+
+void set_parallax_system_for_vbbl(void *vbbl, int value) {
+    static_cast<VBBinaryLensing *>(vbbl)->set_parallaxsystem(value);
+};
