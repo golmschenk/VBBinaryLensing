@@ -35,6 +35,7 @@ char systemslash = '/';
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
+#include <unistd.h>
 
 #ifndef __unmanaged
 using namespace VBBinaryLensingLibrary;
@@ -342,9 +343,13 @@ void VBBinaryLensing::SetObjectCoordinates(char *modelfile, char *sateltabledir)
 			}
 		}
 		if (t0_par_fixed == -1) t0_par_fixed = 0;
-	}else {
-		printf("\nFile not found!\n");
-	}
+    }else {
+        char cwd_string[1000];
+        getcwd(cwd_string, 1000);
+        printf("\nFile not found!\n");
+        printf("File name: %s.\n", modelfile);
+        printf("Current working directory: %s.\n", cwd_string);
+    }
 }
 
 void VBBinaryLensing::ComputeParallax(double t, double t0, double *Et) {
